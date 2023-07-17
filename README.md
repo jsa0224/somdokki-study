@@ -8,9 +8,9 @@
 이러한 부분을 보완하고자, 다른 사람들과 함께 공부 데이터 HUB를 만들기 위해 스터디를 기획했습니다.
 
 ## 👥 참여자
-|[som](https://github.com/jsa0224)|[Rowan](https://github.com/Tediousday93)|[수박](https://github.com/soo941226)|[릴라](https://github.com/juun97)|
-|:---:|:---:|:---:|:---:|
-|<img src=https://github.com/jsa0224/somdokki-study/assets/94514250/0c619389-1893-44e2-b3a3-787b4230b194 width="200" height="200">|<img src=https://github.com/jsa0224/somdokki-study/assets/94514250/615cc0aa-ba44-4699-b748-0edcbd104f3e width="200" height="200">|<img src=https://github.com/jsa0224/somdokki-study/assets/94514250/c8cde0a6-fa29-4269-a99c-8b7a7e956eb8 width="200" height="200">|<img src=https://github.com/jsa0224/somdokki-study/assets/94514250/f859ab9a-df79-4568-9068-5e082cdc9354 width="200" height="200">|
+|[som](https://github.com/jsa0224)|[Rowan](https://github.com/Tediousday93)|[수박](https://github.com/soo941226)|[릴라](https://github.com/juun97)|[LJ](https://github.com/lj-7-77)|
+|:---:|:---:|:---:|:---:|:---:|
+|<img src=https://github.com/jsa0224/somdokki-study/assets/94514250/0c619389-1893-44e2-b3a3-787b4230b194 width="200" height="200">|<img src=https://github.com/jsa0224/somdokki-study/assets/94514250/615cc0aa-ba44-4699-b748-0edcbd104f3e width="200" height="200">|<img src=https://github.com/jsa0224/somdokki-study/assets/94514250/c8cde0a6-fa29-4269-a99c-8b7a7e956eb8 width="200" height="200">|<img src=https://github.com/jsa0224/somdokki-study/assets/94514250/f859ab9a-df79-4568-9068-5e082cdc9354 width="200" height="200">|<img src=https://github.com/jsa0224/somdokki-study/assets/94514250/c64000bf-6189-45db-a632-77f9d1adcd1f width="200" height="200">|
 
 ## 📎 커밋 규칙
 - 문서 추가
