@@ -6,7 +6,7 @@ ReactiveX에서 **옵저버(Observer)**는 **옵저버블(Observable)**을 구�
 
 문서에서 “마블 다이어그램”을 활용한 내용 설명이 자주 보인다. 아래 그림을 통해 마블 다이어그램이 어떻게 옵저버블과 옵저버블의 전환을 표현하는지 알 수 있다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8f4c706c-bac7-4584-83ce-c3d37c128d33/Untitled.png)
+![MableDiagram](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8f4c706c-bac7-4584-83ce-c3d37c128d33/Untitled.png)
 
 - 가로 줄은 옵저버블의 타임라인이다.
 - 도형은 옵저버블에 의해 방출되는 항목을 나타낸다.
