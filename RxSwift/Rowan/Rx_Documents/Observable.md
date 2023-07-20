@@ -1,12 +1,12 @@
 # Observable
 
-ReactiveX에서 **옵저버(Observer)**는 **옵저버블(Observable)**을 구독한다. 이후 옵저버는 옵저버블이 방출하는 하나 또는 연속된 항목에 반응한다. 이 패턴은 동시성 연산을 가능하게 한다. 왜냐하면 이 패턴은 옵저버블이 객체를 방출하는 것을 기다리면서 연산을 block하지 않는 대신에 옵저버블이 미래에 값을 방출했을 때 적절하게 반응할 준비를 하는 보초인 옵저버를 만들기 때문이다.
+ReactiveX에서 **옵저버(Observer)** 는 **옵저버블(Observable)** 을 구독한다. 이후 옵저버는 옵저버블이 방출하는 하나 또는 연속된 항목에 반응한다. 이 패턴은 동시성 연산을 가능하게 한다. 왜냐하면 이 패턴은 옵저버블이 객체를 방출하는 것을 기다리면서 연산을 block하지 않는 대신에 옵저버블이 미래에 값을 방출했을 때 적절하게 반응할 준비를 하는 보초인 옵저버를 만들기 때문이다.
 
 이 문서에서는 리액티브 패턴, 옵저버블, 옵저버 및 옵저버의 옵저버블을 구독하는 방법을 설명한다. [다른 페이지](https://www.notion.so/Operators-fcbf6e948b6549d3b6cbe01a576cbf3b?pvs=21)([Operators](https://reactivex.io/documentation/operators.html))에서는 다양한 옵저버블 연산자를 사용해 옵저버블을 함께 연결하고 동작을 변경하는 방법을 보여준다.
 
 문서에서 “마블 다이어그램”을 활용한 내용 설명이 자주 보인다. 아래 그림을 통해 마블 다이어그램이 어떻게 옵저버블과 옵저버블의 전환을 표현하는지 알 수 있다.
 
-![MableDiagram](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8f4c706c-bac7-4584-83ce-c3d37c128d33/Untitled.png)
+<img src=https://github.com/jsa0224/somdokki-study/blob/main/RxSwift/Rowan/images/MarbleDiagramExample.jpg>
 
 - 가로 줄은 옵저버블의 타임라인이다.
 - 도형은 옵저버블에 의해 방출되는 항목을 나타낸다.
@@ -16,6 +16,7 @@ ReactiveX에서 **옵저버(Observer)**는 **옵저버블(Observable)**을 구�
 - 어떤 이유로 옵저버블이 에러와 함께 비정상적으로 종료되면 X로 표현한다.
 
 ---
+</br>
 
 # Background
 
@@ -25,13 +26,14 @@ ReactiveX에서 **옵저버(Observer)**는 **옵저버블(Observable)**을 구�
 
 이 비동기 프로그래밍 및 디자인 모델을 설명하는 데 사용되는 많은 용어가 있다. 이 문서에서는 다음 용어를 사용할 것이다. 
 
-`**옵저버**는 **옵저버블**을 **구독**한다`
+`옵저버는 옵저버블을 구독한다`
 
 옵저버블은 옵저버의 메서드를 호출하여 항목을 방출하거나 옵저버에게 알림을 보낸다.
 
 다른 문서 및 기타 컨텍스트에서 우리가 “옵저버(observer)”라고 부르는 것은 때때로 “subscriber”, “watcher” 및 “reactor”라고 한다. 일반적으로 이 모델을 “리액터 패턴”이라고 한다.
 
 ---
+</br>
 
 # Establishing Observers
 
@@ -48,6 +50,8 @@ ReactiveX에서 **옵저버(Observer)**는 **옵저버블(Observable)**을 구�
 var returnValue = someMethod(itsParameters)
 // ...반환 값을 통해 유용한 작업 수행
 ```
+
+</br>
 
 비동기 모델에서 흐름은 다음과 같이 진행된다.
 
@@ -71,6 +75,8 @@ myObservable.subscribe(myOnNext)
 
 //... 다른 작업을 수행한다
 ```
+
+</br>
 
 ## onNext, onCompleted, and onError
 
@@ -108,11 +114,15 @@ myObservable.subscribe(myOnNext, myError, myComplete)
 // ...다른 작업 수행
 ```
 
+</br>
+
 ## Unsubscribing
 
 일부 ReactiveX 구현에는 `unsubscribe` 메서드를 구현하는 특화된 옵저버 인터페이스인 `Subscriber`가 있다. 이 메서드를 호출하여 구독자(옵저버)가 현재 구독 중인 옵저버블에 더 이상 관심이 없음을 나타낼 수 있다(구독의 취소가 가능하다).  그 다음 옵저버블은 (구독 중인 다른 옵저버가 없는 경우) 방출할 새 항목 생성을 중지하도록 선택할 수 있다.
 
 이 구독 취소의 결과는 옵저버가 구독한 옵저버블에 적용되는 연산자 체인(chain of operators)을 통해 다시 흐르며(cascade → 스트림에 단계적으로 취소가 적용된다는 의미로 이해됨) 이로 인해 체인의 각 링크가 항목 방출을 중지하게 된다. 그러나 구독 취소가 즉시 발생한다고 보장할 수는 없으며 옵저버블의 방출을 관찰할 옵저버가 남아 있지 않은 후에도 잠시 동안 항목을 생성하고 방출하려고 시도할 수 있다.
+
+</br>
 
 ## Some Notes on Naming Conventions
 
@@ -123,6 +133,7 @@ ReactiveX의 각 언어별 구현에는 고유한 naming 지정 문제가 있다
 예를 들어, `onEvent` naming pattern(예: `onNext`, `onCompleted`, `onError`)이 있다. 일부 컨텍스트에서 이러한 이름은 이벤트 핸들러가 등록되는 방법을 나타낸다. 그러나 ReactiveX에서는 이벤트 핸들러 자체의 이름을 지정한다.
 
 ---
+</br>
 
 # “Hot” and “Cold” Observables
 
@@ -131,6 +142,7 @@ ReactiveX의 각 언어별 구현에는 고유한 naming 지정 문제가 있다
 ReactiveX의 일부 구현에는 “연결가능한” 옵저버블(Connectable Observable)이라는 것이 있다. 이러한 옵저버블은 옵저버가 구독했는지 여부에 관계없이 `Connect` 메서드가 호출될 때까지 항목 방출을 시작하지 않는다.
 
 ---
+</br>
 
 # Composition via Observable Operators
 
@@ -188,6 +200,8 @@ ReactiveX의 일부 구현에는 “연결가능한” 옵저버블(Connectable 
     
 
 이 페이지들은 ReactiveX의 핵심 부분은 아니지만 하나 이상의 언어별 구현 또는 선택적 모듈에서 구현되는 일부 연산자에 대한 정보가 포함되어 있다.
+
+</br>
 
 ## Chaining Operators
 
