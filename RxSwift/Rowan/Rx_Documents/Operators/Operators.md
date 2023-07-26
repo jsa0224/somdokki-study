@@ -24,9 +24,9 @@ ReactiveX의 각 언어별 구현에는 Operator(연산자)가 포함된다. 언
 
 ### Contents
 
-1. Operators By Category
-2. A Decision Tree of Observable Operators
-3. An Alphabetical List of Observable Operators
+1. [Operators By Category](#operators-by-category)
+2. [A Decision Tree of Observable Operators](#a-decision-tree-of-observable-operators)
+3. [List of Observable Operators](#list-of-observable-operators)
 
 ---
 
@@ -152,3 +152,12 @@ ReactiveX의 각 언어별 구현에는 Operator(연산자)가 포함된다. 언
 ## Operators to Convert Observables
 
 - [**To**](https://reactivex.io/documentation/operators/to.html) — 옵저버블을 다른 객체 또는 데이터 구조로 변환
+
+---
+
+# A Decision Tree of Observable Operators
+
+---
+
+# List of Observable Operators
+🔸 [ObserveOn](https://github.com/jsa0224/somdokki-study/blob/main/RxSwift/Rowan/Rx_Documents/Operators/OperatorDetails/ObserveOn.md)
