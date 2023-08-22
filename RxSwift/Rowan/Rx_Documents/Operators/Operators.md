@@ -315,4 +315,8 @@ ReactiveX Observable 연산자를 찾는 데 도움이 되는 tree
 ---
 
 # List of Observable Operators
-🔸 [ObserveOn](https://github.com/jsa0224/somdokki-study/blob/main/RxSwift/Rowan/Rx_Documents/Operators/OperatorDetails/ObserveOn.md)
+🔸 [observe(on:)](https://github.com/jsa0224/somdokki-study/blob/main/RxSwift/Rowan/Rx_Documents/Operators/OperatorDetails/ObserveOn.md)
+
+🔸 [distinctUntilChanged()](https://github.com/jsa0224/somdokki-study/blob/main/RxSwift/Rowan/Rx_Documents/Operators/OperatorDetails/ObserveOn.md)
+
+🔸 [withUnretained(\_:)](https://github.com/jsa0224/somdokki-study/blob/main/RxSwift/Rowan/Rx_Documents/Operators/OperatorDetails/ObserveOn.md)
